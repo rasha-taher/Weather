@@ -1,0 +1,35 @@
+.hourly-grid {
+    display: block;
+}
+
+.hourly-container {
+    height: 150px;
+    width: 100px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    margin-right: 20px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+}
+
+.hourly-content {
+    display: block;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin-left: 25px;
+    gap: 20px;
+}
+
+.hourly-time {
+    color: white;
+}
+
+.hourly-icons {
+    height: 50px;
+    width: 50px;
+}
+
+.hourly-temperature {
+    color: white;
+}
