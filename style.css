@@ -7,6 +7,7 @@ body {
   background-color: #2e3233;
   width: 100%;
 }
+
 header {
   width: 100%;
   font-size: 15px;
@@ -16,17 +17,15 @@ header {
   height: 95px;
   width: 95px;
 }
-.big_div{
-    display:flex ;
-    flex-direction:row;
+.big_div {
+  display: flex;
+  flex-direction: row;
 }
-.div1{
-    width: 60%;
+.comtainer{
+    display: flex;
+    flex-direction: row;
 }
-.div2{
-    width: 40%;
-    text-align: center;
-}
+
 .searching_form {
   display: flex;
   flex-direction: row;
@@ -74,16 +73,13 @@ header {
   margin-top: 50px;
   margin-left: 50px;
 }
-.more_information{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
+.more_information {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
-.more1{
-    display: flex;
-    flex-direction: column;
-}
+
 .main_more {
   background-color: #d9d9d9;
   color: #2e3233;
@@ -101,110 +97,50 @@ header {
 .more_title {
   margin-bottom: 10px;
 }
-.hourly-forecast{
-    padding: 25px;
-    margin-top: 100px;
-    position: relative;
+.hourly-forecast {
+  padding: 25px;
 }
 .hourly-grid {
-    display: block;
-    overflow: hidden;
-    margin-left: 50px;
+  display: block;
+  overflow: hidden;
+  margin-left: 50px;
 }
 
-.hourly-h2{
-color: #D9D9D9;
-margin-bottom: 15px;
+.hourly-h2 {
+  color: #d9d9d9;
+  margin-bottom: 15px;
 }
 .hourly-container {
-    height: 150px;
-    width: 100px;
-    background-color: #D9D9D9;
-    border-radius: 20px;
-    margin-right: 20px;
-    display: inline-grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto;
-    font-size: 20px;
+  height: 150px;
+  width: 100px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  margin-right: 20px;
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+  font-size: 20px;
 }
-.hourly-container:nth-child(n + 6) {
-    display: none;
-  }
-  
-  /* Styles for the arrow buttons */
-  .arrow-button {
-    background-color: transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 5px 10px;
-    color: #2e3233;
-    z-index: 1;
-  }
-  
-  .left-arrow {
-    left: 10px;
-    color: #D9D9D9;
-  }
-  
-  .right-arrow {
-    right: 10px;
-    color: #D9D9D9;
-}
-
 
 .hourly-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    margin-left: 25px;
-    margin-top: 15px;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  margin-left: 25px;
+  margin-top: 15px;
+  gap: 15px;
 }
 
 .hourly-time {
-    color:#2e3233;
+  color: #2e3233;
 }
 
 .hourly-icons {
-    height: 50px;
-    width: 50px;
+  height: 50px;
+  width: 50px;
 }
 
 .hourly-temperature {
-    color: #2e3233;
-}
-
-.icons {
-    height: 100px;
-     width: 100px;
-} 
-
-.inside{
-    display: flex; 
-    flex-direction: row-reverse; 
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    gap: 20px; 
-} 
-.weekly-h1{
-    margin-bottom: 30px;
-}
-.Weekly-forecast{
-    background-color:#D9D9D9;
-    color: #2e3233;
-}
-.weekly-container{
-    margin-bottom: 30px;
-}
-
-.weekly-weekday{ 
-    font-size:25px ;
-    text-align: center;
+  color: #2e3233;
 }

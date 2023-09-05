@@ -18,237 +18,105 @@
     </header>
     <hr class="line" />
 
-    <div class="big_div">
-      <div class="div1">
-        <div class="container">
-          <div class="main">
-            <p class="main_title" id="country">City Name</p>
-            <img src="./weather-icons/unknown.svg" class="main_svg" />
-            <div class="main_info">
-              <div class="main_day" id="date">Sunday</div>
-              <p class="main_visibility">Cloudy</p>
-              <p class="main_temperature">22 &#176;C</p>
-            </div>
-          </div>
-
-          <div class="more_information">
-            <div class="more1">
-              <div class="main_more">
-                <p class="more_title">Time</p>
-                <p class="more_time" id="time">2:29am</p>
-              </div>
-              <div class="main_more">
-                <p class="more_title">Humidity</p>
-                <p class="more_humidity">65%</p>
-              </div>
-            </div>
-            <div class="more1">
-              <div class="main_more">
-                <p class="more_title">Pressure</p>
-                <p class="more_pressure">65%</p>
-              </div>
-              <div class="main_more">
-                <p class="more_title">Wind</p>
-                <p class="more_pressure">20 km/h</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="hourly-forecast">
-          <h2 class="hourly-h2">Hourly Forecast</h2>
-          <button class="arrow-button left-arrow">&lt;</button>
-          <div class="hourly-grid">
-            <div class="hourly-container">
-              <div class="hourly-content">
-                <p class="hourly-time">00:00</p>
-                <img
-                  class="hourly-icons"
-                  src="./weather-icons/fog.svg"
-                  alt=""
-                />
-                <p class="hourly-temperature">18°C</p>
-              </div>
-            </div>
-            <div class="hourly-container">
-              <div class="hourly-content">
-                <p class="hourly-time">03:00</p>
-                <img
-                  class="hourly-icons"
-                  src="./weather-icons/fog.svg"
-                  alt=""
-                />
-                <p class="hourly-temperature">20°C</p>
-              </div>
-            </div>
-            <div class="hourly-container">
-              <div class="hourly-content">
-                <p class="hourly-time">06:00</p>
-                <img
-                  class="hourly-icons"
-                  src="./weather-icons/partlycloudy.svg"
-                  alt=""
-                />
-                <p class="hourly-temperature">22°C</p>
-              </div>
-            </div>
-            <div class="hourly-container">
-              <div class="hourly-content">
-                <p class="hourly-time">09:00</p>
-                <img
-                  class="hourly-icons"
-                  src="./weather-icons/clear.svg"
-                  alt=""
-                />
-                <p class="hourly-temperature">24°C</p>
-              </div>
-            </div>
-            <div class="hourly-container">
-              <div class="hourly-content">
-                <p class="hourly-time">12:00</p>
-                <img
-                  class="hourly-icons"
-                  src="./weather-icons/clear.svg"
-                  alt=""
-                />
-                <p class="hourly-temperature">29°C</p>
-              </div>
-            </div>
-            <div class="hourly-container">
-              <div class="hourly-content">
-                <p class="hourly-time">15:00</p>
-                <img
-                  class="hourly-icons"
-                  src="./weather-icons/clear.svg"
-                  alt=""
-                />
-                <p class="hourly-temperature">27°C</p>
-              </div>
-            </div>
-            <div class="hourly-container">
-              <div class="hourly-content">
-                <p class="hourly-time">18:00</p>
-                <img
-                  class="hourly-icons"
-                  src="./weather-icons/clear.svg"
-                  alt=""
-                />
-                <p class="hourly-temperature">24°C</p>
-              </div>
-            </div>
-            <div class="hourly-container">
-              <div class="hourly-content">
-                <p class="hourly-time">21:00</p>
-                <img
-                  class="hourly-icons"
-                  src="./weather-icons/fog.svg"
-                  alt=""
-                />
-                <p class="hourly-temperature">18°C</p>
-              </div>
-            </div>
-          </div>
-          <button class="arrow-button right-arrow">&gt;</button>
+    <div class="container">
+      <div class="main">
+        <p class="main_title" id="country">City Name</p>
+        <img src="./weather-icons/unknown.svg" class="main_svg" />
+        <div class="main_info">
+          <div class="main_day" id="date">Sunday</div>
+          <p class="main_visibility">Cloudy</p>
+          <p class="main_temperature">22 &#176;C</p>
         </div>
       </div>
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-  const leftArrow = document.querySelector(".left-arrow");
-  const rightArrow = document.querySelector(".right-arrow");
-  const hourlyContainers = document.querySelectorAll(".hourly-container");
-
-  let currentIndex = 0;
-
-  function updateVisibility() {
-    hourlyContainers.forEach((container, index) => {
-      if (index >= currentIndex && index < currentIndex + 5) {
-        container.style.display = "inline-grid";
-      } else {
-        container.style.display = "none";
-      }
-    });
-  }
-
-  leftArrow.addEventListener("click", function () {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateVisibility();
-    }
-  });
-
-  rightArrow.addEventListener("click", function () {
-    if (currentIndex < hourlyContainers.length - 5) {
-      currentIndex++;
-      updateVisibility();
-    }
-  });
-
-  // Initially show the first five containers
-  updateVisibility();
-});
-
-      </script>
-      <div class="div2">
-        <div class="Weekly-forecast">
-          <h2 class="weekly-h1">Weekly Forecast</h2>
-
-          <div class="weekly-container">
-            <p class="weekly-weekday">Monday</p>
-            <div class="inside">
-              <p class="weekly-temperature">20°C</p>
-              <img class="icons" src="./weather-icons/drizzle.svg" alt="" />
-            </div>
+      <div class="more_information">
+        
+          <div class="main_more">
+            <p class="more_title">Time</p>
+            <p class="more_time" id="time">2:29am</p>
           </div>
-
-          <div class="weekly-container">
-            <p class="weekly-weekday">Tuesday</p>
-            <div class="inside">
-              <p class="weekly-temperature">20°C</p>
-              <img class="icons" src="./weather-icons/clear.svg" alt="" />
-            </div>
+          <div class="main_more">
+            <p class="more_title">Humidity</p>
+            <p class="more_humidity">65%</p>
           </div>
-
-          <div class="weekly-container">
-            <p class="weekly-weekday">Wednesday</p>
-            <div class="inside">
-              <p class="weekly-temperature">22°C</p>
-              <img
-                class="icons"
-                src="./weather-icons/mostlycloudy.svg"
-                alt=""
-              />
-            </div>
+     
+          <div class="main_more">
+            <p class="more_title">Pressure</p>
+            <p class="more_pressure">65%</p>
           </div>
-
-          <div class="weekly-container">
-            <p class="weekly-weekday">Thursday</p>
-            <div class="inside">
-              <p class="weekly-temperature">25°C</p>
-              <img
-                class="icons"
-                src="./weather-icons/partlycloudy.svg"
-                alt=""
-              />
-            </div>
-          </div>
-
-          <div class="weekly-container">
-            <p class="weekly-weekday">Friday</p>
-            <div class="inside">
-              <p class="weekly-temperature">22°C</p>
-              <img class="icons" src="./weather-icons/fog.svg" alt="" />
-            </div>
-          </div>
-
-          <div class="weekly-container">
-            <p class="weekly-weekday">Saturday</p>
-            <div class="inside">
-              <p class="weekly-temperature">22°C</p>
-              <img class="icons" src="./weather-icons/cloudy.svg" alt="" />
-            </div>
+          <div class="main_more">
+            <p class="more_title">Wind</p>
+            <p class="more_pressure">20 km/h</p>
           </div>
         </div>
       </div>
     </div>
+    <div class="hourly-forecast">
+      <h2 class="hourly-h2">Hourly Forecast</h2>
+      <div class="hourly-grid">
+        <div class="hourly-container">
+          <div class="hourly-content">
+            <p class="hourly-time">00:00</p>
+            <img class="hourly-icons" src="./weather-icons/fog.svg" alt="" />
+            <p class="hourly-temperature">18°C</p>
+          </div>
+        </div>
+        <div class="hourly-container">
+          <div class="hourly-content">
+            <p class="hourly-time">03:00</p>
+            <img class="hourly-icons" src="./weather-icons/fog.svg" alt="" />
+            <p class="hourly-temperature">20°C</p>
+          </div>
+        </div>
+        <div class="hourly-container">
+          <div class="hourly-content">
+            <p class="hourly-time">06:00</p>
+            <img
+              class="hourly-icons"
+              src="./weather-icons/partlycloudy.svg"
+              alt=""
+            />
+            <p class="hourly-temperature">22°C</p>
+          </div>
+        </div>
+        <div class="hourly-container">
+          <div class="hourly-content">
+            <p class="hourly-time">09:00</p>
+            <img class="hourly-icons" src="./weather-icons/clear.svg" alt="" />
+            <p class="hourly-temperature">24°C</p>
+          </div>
+        </div>
+
+        <div class="hourly-container">
+          <div class="hourly-content">
+            <p class="hourly-time">12:00</p>
+            <img class="hourly-icons" src="./weather-icons/clear.svg" alt="" />
+            <p class="hourly-temperature">29°C</p>
+          </div>
+        </div>
+        <div class="hourly-container">
+          <div class="hourly-content">
+            <p class="hourly-time">15:00</p>
+            <img class="hourly-icons" src="./weather-icons/clear.svg" alt="" />
+            <p class="hourly-temperature">27°C</p>
+          </div>
+        </div>
+        <div class="hourly-container">
+          <div class="hourly-content">
+            <p class="hourly-time">18:00</p>
+            <img class="hourly-icons" src="./weather-icons/clear.svg" alt="" />
+            <p class="hourly-temperature">24°C</p>
+          </div>
+        </div>
+        <div class="hourly-container">
+          <div class="hourly-content">
+            <p class="hourly-time">21:00</p>
+            <img class="hourly-icons" src="./weather-icons/fog.svg" alt="" />
+            <p class="hourly-temperature">18°C</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
