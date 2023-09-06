@@ -21,7 +21,7 @@ header {
   display: flex;
   flex-direction: row;
 }
-.comtainer{
+.container{
     display: flex;
     flex-direction: row;
 }
@@ -78,6 +78,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-left: 20px;
 }
 
 .main_more {
@@ -94,6 +95,9 @@ header {
   font-size: 20px;
   margin-bottom: 20px;
 }
+.main_more:hover{
+  transform: scale(1.5);
+}
 .more_title {
   margin-bottom: 10px;
 }
@@ -101,9 +105,11 @@ header {
   padding: 25px;
 }
 .hourly-grid {
-  display: block;
+  display: flex;
   overflow: hidden;
   margin-left: 50px;
+  align-items: center;
+  justify-content: center;
 }
 
 .hourly-h2 {
