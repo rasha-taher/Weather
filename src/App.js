@@ -1,6 +1,6 @@
 import React from 'react';
 import Content from './Content.js';
-import Search from './Search.js';
+import Search from './search.js';
 import HourlyForecast from './HourlyForecast.js';
 import WeatherInformation from './WeatherInformation.js';
 
@@ -10,8 +10,8 @@ function App() {
 
       <Search />
       <div class="container">
-      <Content />
-      <WeatherInformation/>
+        <Content />
+        <WeatherInformation />
       </div>
       <div className="hourly-forecast">
         <h2 className="hourly-h2">Hourly Forecast</h2>
