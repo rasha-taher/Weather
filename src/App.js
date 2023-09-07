@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header.js';
-import Search from './Search.js';
+import Header from './header.js';
+import Search from './search.js';
 import HourlyForecast from './HourlyForecast.js';
 
 
