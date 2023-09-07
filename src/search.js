@@ -1,11 +1,11 @@
 import React from 'react';
-
+import clear from './weather-icons/clear.svg'
 const Search = () => {
   return (
     <div>
       <header>
         <form method="post" className="searching_form">
-          <img src="./weather-icons/clear.svg" className="logo_svg" />
+          <img src={clear} className="logo_svg" />
           <input
             type="text"
             className="searching_box"

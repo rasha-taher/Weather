@@ -1,13 +1,13 @@
 import React from 'react';
-
-const Header = () => {
+import unknown from './weather-icons/unknown.svg'
+const Content = () => {
   return (
     
       <div className="main">
         <p className="main_title" id="country">
           City Name
         </p>
-        <img src=".\unknown.svg" className="main_svg" alt="weather icon" />
+        <img src={unknown} className="main_svg" alt="weather icon" />
         <div className="main_info">
           <div className="main_day" id="date">
             Sunday
@@ -20,4 +20,4 @@ const Header = () => {
   );
 }
 
-export default Header;
+export default Content;
