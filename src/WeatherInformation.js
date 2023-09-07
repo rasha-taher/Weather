@@ -1,5 +1,6 @@
 import React from 'react';
-function WeatherInformation() {
+
+const WeatherInformation =() => {
     return (
       <div className="more_information">
         <div>
