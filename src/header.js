@@ -7,7 +7,7 @@ const Header = () => {
         <p className="main_title" id="country">
           City Name
         </p>
-        <img src="weather-website\src\weather-icons\unknown.svg" className="main_svg" alt="weather icon" />
+        <img src=".\unknown.svg" className="main_svg" alt="weather icon" />
         <div className="main_info">
           <div className="main_day" id="date">
             Sunday
