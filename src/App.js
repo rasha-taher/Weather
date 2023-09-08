@@ -21,14 +21,24 @@ const api = {
 function App() {
   const [search, setSearch] = useState("");
   const [weather, setWeather] = useState({});
-
+  const [forecast, setforecast] = useState({});
   const searchPressed = (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault();
     fetch(`${api.base}weather?q=${search}&units=metric&APPID=${api.key}`)
       .then((res) => res.json())
       .then((result) => {
         setWeather(result);
         console.log(result);
+      });
+  };
+
+  const searchPressed2 = (e) => {
+    e.preventDefault();
+    fetch(`${api.base}forecast?q=${search}&units=metric&APPID=${api.key}`)
+      .then((res2) => res2.json())
+      .then((result2) => {
+        setforecast(result2);
+        console.log(result2);
       });
   };
 
@@ -86,6 +96,18 @@ function App() {
         return unknown;
     }
   }
+  function getWeatherIcon(weatherMain) {
+    switch (weatherMain) {
+      case "Clouds":
+        return cloudy;
+      case "Clear":
+        return clear;
+      case "Rain":
+        return rain;
+      default:
+        return unknown;
+    }
+  }
   return (
     <div className="App">
       <header>
@@ -100,11 +122,14 @@ function App() {
           <button className="submit_btn" onClick={searchPressed}>
             Search
           </button>
+          <button onClick={searchPressed2} className="submit_btn">
+            Show Hourly Forecast
+          </button>
         </form>
       </header>
       <hr className="line" />
       <div class="container">
-        {typeof weather.main !== "undefined" ? (
+        {typeof weather.main !== "undefined" && forecast.main!=="undefined" ? (
           <div className="main">
             <p className="main_title" id="country">
               {weather.name}
@@ -140,7 +165,13 @@ function App() {
             <div className="hourly-forecast">
               <h2 className="hourly-h2">Hourly Forecast</h2>
               <div className="hourly-grid">
-                {/* Your Hourly Forecast components go here */}
+                <HourlyForecast time="00:00" icon="clear" temperature="22" />
+                <HourlyForecast time="03:00" icon="clear" temperature="22" />
+                <HourlyForecast time="09:00" icon="clear" temperature="22" />
+                <HourlyForecast time="12:00" icon="clear" temperature="22" />
+                <HourlyForecast time="15:00" icon="clear" temperature="22" />
+                <HourlyForecast time="18:00" icon="clear" temperature="22" />
+                <HourlyForecast time="21:00" icon="clear" temperature="22" />
               </div>
             </div>
           </div>
@@ -157,39 +188,23 @@ function App() {
           ""
         )}
       </div>
-      {console.log(weather.main)}
-      {typeof weather.main !== "undefined" ? (
+      {console.log(forecast.main)}
+      
         <div className="hourly-forecast">
           <h2 className="hourly-h2">Hourly Forecast</h2>
-          <div className="hourly-grid">
-            <div className="extra">
-              {console.log("object ", weather)}
-              {weather &&
-                weather.weather &&
-                // weather.list &&
-                //.list.slice(0, 8)
-                weather.weather.map((forecast, index) => (
-                  <div className="hourly-container">
-                    <div className="hourly-content">
-                      <p className="hourly-time"> {'dtime'}</p>
-                      <img
-                        className="hourly-icons"
-                        src={images(forecast.main)}
-                        alt=""
-                      />
-                      <p className="hourly-temperature">
-                        {forecast.main.temp}&#176;C
-                      </p>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}{" "}
-      ;
+          {forecast.list ? (
+    forecast.list.slice(0, 8).map((hourlyData, index) => (
+      <HourlyForecast
+        key={index}
+        time={hourlyData.dt_txt.split(' ')[1]} // Extract time from dt_txt
+        icon={ getWeatherIcon(hourlyData.weather[0].main)}
+        temperature={hourlyData.main.temp}
+      />
+    ))
+  ) : (
+    <p>Loading Hourly Forecast...</p>
+  )}
+      </div>
     </div>
   );
 }
