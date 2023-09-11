@@ -161,6 +161,7 @@ function App() {
       
         <div className="hourly-forecast">
           <h2 className="hourly-h2">Hourly Forecast</h2>
+          <div class="hourly-grid">
           {forecast.list ? (
     forecast.list.slice(0, 8).map((hourlyData, index) => (
       <HourlyForecast
@@ -173,6 +174,7 @@ function App() {
   ) : (
     <p>Loading Hourly Forecast...</p>
   )}
+  </div>
       </div>
     </div>
   );
