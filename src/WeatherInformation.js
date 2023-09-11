@@ -6,7 +6,7 @@ const WeatherInformation =({ feelslike, humidity, pressure, wind })=> {
         <div>
           <div className="main_more">
             <p className="more_title">Feels Like</p>
-            <p className="more_feels-like" id="feels-like">{feelslike}</p>
+            <p className="more_feels-like" id="feels-like">{feelslike}  &#176;C</p>
           </div>
           <div className="main_more">
             <p className="more_title">Humidity</p>
