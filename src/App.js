@@ -25,6 +25,9 @@ function App() {
       .then((result) => {
         setforecast(result);
        console.log(result);
+      })
+      .catch((error) => {
+        console.error('Error fetching weather data:', error);
       });
   };
 
